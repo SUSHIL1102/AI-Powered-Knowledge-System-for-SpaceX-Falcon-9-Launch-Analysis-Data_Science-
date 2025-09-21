@@ -1,56 +1,52 @@
-# AI-Powered Knowledge System for SpaceX Falcon 9 Launch Analysis
+# SpaceX Falcon 9 First Stage Landing Prediction
 
 ## Overview
 
-This repository contains the capstone project for the **Generative AI and its Applications** course (UE22CS342BA9). The project implements an AI-based knowledge system focused on analyzing SpaceX Falcon 9 rocket launch data to predict first-stage landing success. It integrates techniques from natural language processing (NLP), prompt engineering, retrieval-augmented generation (RAG), multimodal inputs, fine-tuning with LoRA, and evaluation frameworks, following the guidelines outlined in the project documentation.
+This repository contains an individual project focused on predicting the success of SpaceX Falcon 9 first-stage landings. The analysis uses machine learning to determine factors influencing landing outcomes, which can help estimate launch costs by assessing reusability. The project involves data collection from APIs and web scraping, data wrangling, exploratory data analysis (EDA), SQL queries, visualizations, interactive dashboards, and predictive modeling.
 
-The system uses publicly available data from Wikipedia and the SpaceX API, processed with Python libraries like Pandas, NumPy, Scikit-learn, and Folium. The project is structured into a comprehensive notebook, phase-specific notebooks, and a summary presentation, showcasing a full data science workflow from data collection to model evaluation.
+Publicly available data from Wikipedia and the SpaceX API is processed using Python libraries such as Pandas, NumPy, Scikit-learn, Matplotlib, Seaborn, Folium, and Plotly Dash. The implementation is demonstrated in a comprehensive final notebook, phase-specific notebooks, and a summary PDF.
 
 ## Project Structure
 
-- **Capstone.ipynb**: A single Jupyter notebook with the complete implementation, covering all phases:
-  - Data collection, preprocessing, and EDA.
-  - Model development and fine-tuning.
-  - Evaluation and insights.
-- **phase_notebooks/**: A folder containing separate notebooks for each phase:
-  - `phase1_nlp.ipynb`: Basic NLP tasks (preprocessing, POS tagging, embeddings).
-  - `phase2_prompt_engineering.ipynb`: Prompt engineering (CoT, ToT, GoT).
-  - `phase3_rag.ipynb`: Retrieval-augmented generation setup.
-  - `phase4_multimodal.ipynb`: Agents with multimodal inputs.
-  - `phase5_finetuning.ipynb`: Fine-tuning with LoRA/QLoRA.
-  - `phase6_evaluation.ipynb`: Evaluation frameworks.
-- **summary_slides.pdf**: A concise presentation summarizing the project’s methodology, results, and insights.
-- **data/**: Directory for raw and processed datasets (e.g., CSV files, API data).
-- **images/**: Folder for visualizations (e.g., launch site maps, model performance plots).
+- **SpaceY_final.ipynb**: The complete Jupyter notebook combining all phases, including data collection, preprocessing, EDA, modeling, and evaluation.
+- **labs/**: A folder containing separate notebooks for each phase:
+  - `1)jupyter-labs-spacex-data-collection-api.ipynb`: Data collection via API.
+  - `2)jupyter-labs-webscraping.ipynb`: Web scraping for launch data.
+  - `3)labs-jupyter-spacex-Data wrangling.ipynb`: Data cleaning and wrangling.
+  - `4)jupyter-labs-eda-sql-coursera_sqllite.ipynb`: EDA with SQL queries.
+  - `5)edadataviz (copy).ipynb`: Data visualization.
+  - `6)lab_jupyter_launch_site_location(Folium).ipynb`: Launch site mapping with Folium.
+  - `8)SpaceX_Machine Learning Prediction.ipynb`: Machine learning model development and prediction.
+- **Interactive Dashboard with Ploty Dash.pdf**: A PDF summary of the interactive dashboard built with Plotly Dash, including visualizations and insights.
+- **data/**: Directory for raw and processed datasets (e.g., CSV files from API and scraping).
+- **images/**: Folder for generated plots and visualizations.
 - **README.md**: This file.
 
 ## Methodology
 
-### Phase 1: Basic NLP Tasks
-- Preprocessed textual data from Wikipedia and API sources.
-- Applied POS tagging and created word embeddings (e.g., Word2Vec) to analyze launch-related terms.
-- Visualized embeddings to identify relationships between key concepts.
+### Phase 1: Data Collection
+- Collected launch data using the SpaceX API and web scraping from Wikipedia.
+- Extracted details like booster versions, launch sites, payloads, and core outcomes.
 
-### Phase 2: Prompt Engineering
-- Implemented Chain of Thought (CoT) for step-by-step reasoning on launch success factors.
-- Used Tree of Thought (ToT) to explore decision pathways based on launch conditions.
-- Mapped relationships with Graph of Thought (GoT) for launch site and payload correlations.
+### Phase 2: Data Wrangling
+- Cleaned and formatted the data, handling missing values and inconsistencies.
+- Created features such as payload mass, orbit type, and landing class.
 
-### Phase 3: Retrieval-Augmented Generation (RAG)
-- Built a knowledge base from launch data and articles.
-- Integrated a retrieval system (e.g., FAISS) with a generative model to provide context-aware answers.
+### Phase 3: Exploratory Data Analysis (EDA)
+- Performed statistical analysis and visualizations (e.g., success rates by launch site).
+- Used SQL for querying datasets and Folium for mapping launch locations.
 
-### Phase 4: Agents with Multimodal Inputs
-- Designed agents for text-based query handling (e.g., "What affects landing success?").
-- Planned extensions for voice and image inputs (e.g., OCR for launch images).
+### Phase 4: Data Visualization and Dashboard
+- Generated plots with Matplotlib and Seaborn.
+- Built an interactive dashboard with Plotly Dash to explore trends dynamically.
 
-### Phase 5: Fine-Tuning Using LoRA
-- Fine-tuned a pre-trained model (e.g., BERT or T5) with LoRA to optimize for launch prediction.
-- Trained low-rank matrices with small learning rates, keeping original weights frozen.
+### Phase 5: Machine Learning Prediction
+- Developed models (e.g., logistic regression, SVM, decision trees, KNN) using Scikit-learn.
+- Tuned hyperparameters with GridSearchCV and evaluated using accuracy, F1-score, and confusion matrices.
 
-### Phase 6: Evaluation Frameworks
-- Evaluated model performance using metrics like Accuracy, F1-Score, BLEU, and ROUGE.
-- Compiled a detailed report on strengths, weaknesses, and recommendations.
+### Phase 6: Evaluation and Insights
+- Assessed model performance on test data.
+- Identified key predictors like launch site and payload mass for landing success.
 
 ## Requirements
 
